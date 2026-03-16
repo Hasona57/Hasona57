@@ -1,0 +1,38 @@
+name: Update Anghami Card
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate Anghami SVG card
+        run: node scripts/generate-anghami.js
+        env:
+          ANGHAMI_USER_ID: "168627038"
+
+      - name: Commit updated card
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/anghami-card.svg
+          git diff --staged --quiet || git commit -m "Update Anghami card"
+          git push
