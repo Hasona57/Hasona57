@@ -15,7 +15,7 @@
 
 ---
 
-<img align="right" height="200" src="./assets/Ayanokouji Kiyotaka.gif" alt="Ayanokouji gif" />
+<img align="right" height="300" src="./assets/Ayanokouji Kiyotaka.gif" alt="Ayanokouji gif" />
 
 ### About Me
 
@@ -44,7 +44,7 @@
 
 ---
 
-<img align="right" height="200" style="margin-top:150px;" src="./assets/Dance.gif" alt="Dance gif" />
+<img align="right" height="300" src="./assets/Dance.gif" alt="Dance gif" />
 
 ### Most Used Languages
 
@@ -56,7 +56,7 @@
 
 ---
 
-<img align="right" height="200" src="./assets/Music.gif" alt="Music gif" />
+<img align="right" height="300" src="./assets/Music.gif" alt="Music gif" />
 
 ### Spotify
 
@@ -70,7 +70,7 @@
 
 ---
 
-<img align="right" height="200" src="./assets/Oshi No Ko.gif" alt="Oshi No Ko gif" />
+<img align="right" height="300" src="./assets/Oshi No Ko.gif" alt="Oshi No Ko gif" />
 
 ### Tech Stack
 
