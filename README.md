@@ -58,11 +58,11 @@
 
 <img align="right" height="300" src="./assets/Music.gif" alt="Music gif" />
 
-### 🎧 Music
+### Anghami
 
 <p align="center">
-  <a href="https://play.anghami.com/profile/168627038">
-    <img src="https://img.shields.io/badge/Listen%20on%20Anghami-FF0050?style=for-the-badge&logo=music&logoColor=white"/>
+  <a href="https://play.anghami.com/profile/168627038" target="_blank">
+    <img src="https://img.shields.io/badge/Open%20My%20Anghami%20Music-FF0050?style=for-the-badge&logo=music&logoColor=white"/>
   </a>
 </p>
 
