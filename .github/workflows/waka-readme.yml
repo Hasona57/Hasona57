@@ -1,0 +1,25 @@
+name: Waka Readme
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
+
+jobs:
+  update-readme:
+    name: Update README with Hackatime stats
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: athul/waka-readme@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          API_BASE_URL: https://hackatime.hackclub.com/api
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: Hasona57/Hasona57
+          SECTION_NAME: waka
+          SHOW_TITLE: true
+          SHOW_TIME: true
+          SHOW_TOTAL: true
+          LANG_COUNT: 5
+          TIME_RANGE: last_7_days
