@@ -1,74 +1,114 @@
-- name: Fetch Hackatime stats and update README
-  env:
-    HACKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-  run: |
-    python << 'PY'
-    import json
-    import os
-    import re
-    import urllib.request
-    import base64
+name: Update Hackatime Stats
 
-    api_key = os.environ["HACKATIME_API_KEY"].strip()
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
 
-    # Basic auth value must be base64-encoded
-    basic_token = base64.b64encode(api_key.encode("utf-8")).decode("utf-8")
+permissions:
+  contents: write
 
-    url = "https://hackatime.hackclub.com/api/hackatime/v1/users/current/stats/last_7_days"
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
 
-    req = urllib.request.Request(
-        url,
-        headers={
-            "Authorization": f"Basic {basic_token}",
-            "User-Agent": "GitHubAction",
-            "Accept": "application/json",
-        }
-    )
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    try:
-        with urllib.request.urlopen(req) as response:
-            raw = response.read().decode("utf-8")
-    except Exception as e:
-        raise SystemExit(f"Failed to fetch Hackatime stats: {e}")
+      - name: Update README from Hackatime
+        env:
+          HACKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: |
+          python << 'PY'
+          import os
+          import re
+          import json
+          import base64
+          import urllib.request
+          import urllib.error
 
-    try:
-        data = json.loads(raw)
-    except Exception:
-        raise SystemExit(f"Hackatime did not return valid JSON. Response was:\n{raw[:1000]}")
+          api_key = os.environ["HACKATIME_API_KEY"].strip()
 
-    human_total = data.get("data", {}).get("human_readable_total", "No activity tracked")
-    languages = data.get("data", {}).get("languages", [])
+          # WakaTime-compatible APIs use HTTP Basic Auth with the API key
+          auth_value = base64.b64encode(api_key.encode("utf-8")).decode("utf-8")
 
-    lines = []
-    lines.append("### Coding Activity (Last 7 Days)")
-    lines.append("")
-    lines.append(f"**Total Time:** {human_total}")
-    lines.append("")
+          url = "https://hackatime.hackclub.com/api/hackatime/v1/users/current/stats/last_7_days"
 
-    if languages:
-        lines.append("```text")
-        for lang in languages[:5]:
-            name = lang.get("name", "Unknown")
-            text = lang.get("text", "0 secs")
-            percent = lang.get("percent", 0)
-            lines.append(f"{name:<15} {text:<12} {percent:>5}%")
-        lines.append("```")
-    else:
-        lines.append("_No coding activity found._")
+          req = urllib.request.Request(
+              url,
+              headers={
+                  "Authorization": f"Basic {auth_value}",
+                  "Accept": "application/json",
+                  "User-Agent": "GitHub-Actions-Hackatime-README"
+              }
+          )
 
-    new_block = "\n".join(lines)
+          try:
+              with urllib.request.urlopen(req) as response:
+                  raw = response.read().decode("utf-8")
+          except urllib.error.HTTPError as e:
+              body = e.read().decode("utf-8", errors="replace")
+              raise SystemExit(f"HTTP Error {e.code}: {body}")
+          except Exception as e:
+              raise SystemExit(f"Request failed: {e}")
 
-    with open("README.md", "r", encoding="utf-8") as f:
-        readme = f.read()
+          try:
+              payload = json.loads(raw)
+          except Exception:
+              raise SystemExit(f"Invalid JSON response:\n{raw[:2000]}")
 
-    pattern = r"<!--START_SECTION:waka-->.*?<!--END_SECTION:waka-->"
-    replacement = f"<!--START_SECTION:waka-->\n{new_block}\n<!--END_SECTION:waka-->"
+          data = payload.get("data", {})
+          human_total = data.get("human_readable_total") or data.get("text") or "No activity tracked"
+          languages = data.get("languages", [])
 
-    if not re.search(pattern, readme, flags=re.S):
-        raise SystemExit("README markers <!--START_SECTION:waka--> and <!--END_SECTION:waka--> not found.")
+          lines = []
+          lines.append("### Coding Activity")
+          lines.append("")
+          lines.append(f"**Last 7 Days Total:** {human_total}")
+          lines.append("")
 
-    updated = re.sub(pattern, replacement, readme, flags=re.S)
+          if languages:
+              lines.append("```text")
+              for lang in languages[:5]:
+                  name = str(lang.get("name", "Unknown"))
+                  text = str(lang.get("text", "0 secs"))
+                  percent = lang.get("percent", 0)
 
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(updated)
-    PY
+                  if isinstance(percent, float):
+                      percent_text = f"{percent:.2f}%"
+                  else:
+                      percent_text = f"{percent}%"
+
+                  lines.append(f"{name:<16} {text:<14} {percent_text:>8}")
+              lines.append("```")
+          else:
+              lines.append("_No coding activity found._")
+
+          new_section = "\n".join(lines)
+
+          readme_path = "README.md"
+          with open(readme_path, "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          pattern = r"<!--START_SECTION:waka-->.*?<!--END_SECTION:waka-->"
+          replacement = f"<!--START_SECTION:waka-->\n{new_section}\n<!--END_SECTION:waka-->"
+
+          if not re.search(pattern, readme, flags=re.DOTALL):
+              raise SystemExit("README markers not found. Make sure README.md contains <!--START_SECTION:waka--> and <!--END_SECTION:waka-->")
+
+          updated = re.sub(pattern, replacement, readme, flags=re.DOTALL)
+
+          with open(readme_path, "w", encoding="utf-8") as f:
+              f.write(updated)
+
+          print("README updated successfully.")
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "Update Hackatime stats"
+          git push
