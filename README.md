@@ -35,8 +35,7 @@
 ### 📊 GitHub Stats
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=Hasona57&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true&border_radius=18&rank_icon=github&cache_seconds=1800" height="165" alt="stats graph" />
-</p>
+  <img src="https://github-readme-stats.vercel.app/api?username=Hasona57&show_icons=true&theme=tokyonight&hide_border=true&border_radius=18&rank_icon=github&cache_seconds=86400" height="165" alt="GitHub stats" />
 
 <p align="left">
   <img src="https://streak-stats.demolab.com?user=Hasona57&theme=tokyonight&hide_border=true&border_radius=18&cache_seconds=1800" height="165" alt="streak graph" />
