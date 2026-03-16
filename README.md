@@ -28,7 +28,7 @@
 
 ---
 
-<img align="right" height="200" style="margin-top:40px;" src="./assets/Focus.gif" alt="Focus gif" />
+<img align="right" height="200" style="margin-top:150px;" src="./assets/Focus.gif" alt="Focus gif" />
 
 ### GitHub Stats
 
@@ -44,7 +44,7 @@
 
 ---
 
-<img align="right" height="200" src="./assets/Dance.gif" alt="Dance gif" />
+<img align="right" height="200" style="margin-top:150px;" src="./assets/Dance.gif" alt="Dance gif" />
 
 ### Most Used Languages
 
