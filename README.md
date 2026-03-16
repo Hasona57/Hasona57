@@ -6,7 +6,7 @@
 
 ###
 
-<img align="right" height="300" src="https://i.giphy.com/media/3tjwtj91ACw3LcXXuw/giphy.gif" />
+<img align="right" height="300" src="./assets/Ayanokouji Kiyotaka.gif" />
 
 ###
 
@@ -20,7 +20,7 @@
 
 ###
 
-<img align="right" height="303" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmpnaTljeXZjY2ZjMnd0d2MwYmQ1aDU4dWp3eGRrcHUxaXBmZHVwcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LML5ldpTKLPelFtBfY/giphy.gif" />
+<img align="right" height="303" src="./assets/Oshi No Ko.gif" />
 
 ###
 
@@ -32,7 +32,7 @@
 
 ###
 
-<img align="right" height="200" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZ3M244amwzeDBkNHNjZjFobXgyb2JjanB2YTVoN216enN0c2twYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sFKyfExMBYWpSEbcml/giphy.gif"  />
+<img align="right" height="200" src="./assets/Dance.gif"  />
 
 ###
 
