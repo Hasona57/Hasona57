@@ -59,6 +59,13 @@
 ### Coding Activity
 
 <!--START_SECTION:waka-->
+### Coding Activity
+
+**Last 7 Days Total:** 0 hrs 0 mins
+
+```text
+Markdown         0 hrs 0 mins    100.00%
+```
 <!--END_SECTION:waka-->
 
 ---
