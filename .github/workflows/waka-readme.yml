@@ -1,27 +1,95 @@
-name: Waka Readme
+name: Update Hackatime Stats
 
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 */12 * * *"
 
+permissions:
+  contents: write
+
 jobs:
   update-readme:
-    name: Update README with Hackatime stats
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - uses: athul/waka-readme@master
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          API_BASE_URL: https://hackatime.hackclub.com/api
-          GH_TOKEN: ${{ github.token }}
-          REPOSITORY: Hasona57/Hasona57
-          SECTION_NAME: waka
-          SHOW_TITLE: true
-          SHOW_TIME: true
-          SHOW_TOTAL: true
-          LANG_COUNT: 5
-          TIME_RANGE: last_7_days
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch Hackatime stats and update README
+        env:
+          HACKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: |
+          python << 'PY'
+          import json
+          import os
+          import re
+          import urllib.request
+
+          api_key = os.environ["HACKATIME_API_KEY"]
+
+          url = "https://hackatime.hackclub.com/api/hackatime/v1/users/current/stats/last_7_days"
+
+          req = urllib.request.Request(
+              url,
+              headers={
+                  "Authorization": f"Basic {api_key}",
+                  "User-Agent": "GitHubAction"
+              }
+          )
+
+          try:
+              with urllib.request.urlopen(req) as response:
+                  raw = response.read().decode("utf-8")
+          except Exception as e:
+              raise SystemExit(f"Failed to fetch Hackatime stats: {e}")
+
+          try:
+              data = json.loads(raw)
+          except Exception:
+              raise SystemExit(f"Hackatime did not return valid JSON. Response was:\n{raw[:1000]}")
+
+          human_total = data.get("data", {}).get("human_readable_total", "No activity tracked")
+          languages = data.get("data", {}).get("languages", [])
+
+          lines = []
+          lines.append("### Coding Activity (Last 7 Days)")
+          lines.append("")
+          lines.append(f"**Total Time:** {human_total}")
+          lines.append("")
+
+          if languages:
+              lines.append("```text")
+              for lang in languages[:5]:
+                  name = lang.get("name", "Unknown")
+                  text = lang.get("text", "0 secs")
+                  percent = lang.get("percent", 0)
+                  lines.append(f"{name:<15} {text:<12} {percent:>5}%")
+              lines.append("```")
+          else:
+              lines.append("_No coding activity found._")
+
+          new_block = "\n".join(lines)
+
+          with open("README.md", "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          pattern = r"<!--START_SECTION:waka-->.*?<!--END_SECTION:waka-->"
+          replacement = f"<!--START_SECTION:waka-->\n{new_block}\n<!--END_SECTION:waka-->"
+
+          if not re.search(pattern, readme, flags=re.S):
+              raise SystemExit("README markers <!--START_SECTION:waka--> and <!--END_SECTION:waka--> not found.")
+
+          updated = re.sub(pattern, replacement, readme, flags=re.S)
+
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(updated)
+          PY
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "Update Hackatime stats"
+          git push
