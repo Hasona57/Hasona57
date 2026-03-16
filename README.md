@@ -60,9 +60,9 @@
 
 ### Anghami
 
-<p align="center">
-  <a href="https://play.anghami.com/profile/168627038" target="_blank">
-    <img src="https://img.shields.io/badge/Open%20My%20Anghami%20Music-FF0050?style=for-the-badge&logo=music&logoColor=white"/>
+<p align="left">
+  <a href="https://play.anghami.com/profile/168627038">
+    <img src="https://raw.githubusercontent.com/Hasona57/Hasona57/main/assets/anghami-card.svg" alt="Anghami recently played" />
   </a>
 </p>
 
