@@ -6,7 +6,9 @@
 
 ###
 
-<img align="right" height="300" src="./assets/Ayanokouji Kiyotaka.gif" />
+<img align="right" height="200" src="./assets/Ayanokouji Kiyotaka.gif" />
+<br>
+<img align="right" height="200" src="./assets/Focus.gif" />
 
 ###
 
@@ -20,7 +22,9 @@
 
 ###
 
-<img align="right" height="303" src="./assets/Oshi No Ko.gif" />
+<img align="right" height="200" src="./assets/Dance.gif"  />
+<br>
+<img align="right" height="200" src="./assets/Music.gif" />
 
 ###
 
@@ -32,7 +36,7 @@
 
 ###
 
-<img align="right" height="200" src="./assets/Dance.gif"  />
+<img align="right" height="200" src="./assets/Oshi No Ko.gif" />
 
 ###
 
