@@ -14,7 +14,7 @@ jobs:
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          API_BASE_URL: https://hackatime.hackclub.com/api
+          API_BASE_URL: https://hackatime.hackclub.com/api/hackatime/v1
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: Hasona57/Hasona57
           SECTION_NAME: waka
