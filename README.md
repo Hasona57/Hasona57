@@ -58,13 +58,9 @@
 
 <img align="right" height="300" src="./assets/Music.gif" alt="Music gif" />
 
-### Spotify
+### Anghami
 
-<p align="left">
-  <a href="https://open.spotify.com/user/31dys35vlptcdrz2d5srpymf3vie">
-    <img src="https://spotify-recently-played-readme.vercel.app/api?user=31dys35vlptcdrz2d5srpymf3vie&count=5&unique=false" alt="Spotify recently played" />
-  </a>
-</p>
+ <iframe src="https://widget.anghami.com/profile/168627038/?theme=fulltrans&layout=list&lang=en" scrolling="no" frameborder="0" width=600 height=450 ></iframe>
 
 <br clear="right"/>
 
