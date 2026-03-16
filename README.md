@@ -70,7 +70,7 @@
 
 ---
 
-<img align="right" height="300" src="./assets/Oshi No Ko.gif" alt="Oshi No Ko gif" />
+<img align="right" height="250" src="./assets/Oshi No Ko.gif" alt="Oshi No Ko gif" />
 
 ### Tech Stack
 
