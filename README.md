@@ -58,12 +58,11 @@
 
 <img align="right" height="300" src="./assets/Music.gif" alt="Music gif" />
 
-### Anghami
-
-<p align="left">
-  <a href="https://play.anghami.com/profile/168627038">
-    <img src="https://raw.githubusercontent.com/Hasona57/Hasona57/main/assets/anghami-card.svg" alt="Anghami recently played" />
-  </a>
+### Spotify 
+<p align="left"> 
+  <a href="https://open.spotify.com/user/31dys35vlptcdrz2d5srpymf3vie"> 
+    <img src="https://spotify-recently-played-readme.vercel.app/api?user=31dys35vlptcdrz2d5srpymf3vie&count=5&unique=false" alt="Spotify recently played" /> 
+  </a> 
 </p>
 
 <br clear="right"/>
