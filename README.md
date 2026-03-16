@@ -28,7 +28,7 @@
 
 ---
 
-<img align="right" height="200" src="./assets/Focus.gif" alt="Focus gif" />
+<img align="right" height="200" style="margin-top:40px;" src="./assets/Focus.gif" alt="Focus gif" />
 
 ### GitHub Stats
 
