@@ -1,9 +1,3 @@
-<div>
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=header&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&animation=blink&descSize=20&descAlign=50&descAlignY=50&color=gradient"  />
-</div>
-
-###
-
 <h2 align="left">Hi 👋! My name is Hassan Mohamed</h2>
 
 ###
@@ -88,11 +82,5 @@
 <br clear="both">
 
 <img src="https://raw.githubusercontent.com/Hasona57/Hasona57/output/snake.svg" alt="Snake animation" />
-
-###
-
-<div>
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&animation=blink&descSize=20&descAlign=50&descAlignY=50&color=gradient"  />
-</div>
 
 ###
