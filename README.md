@@ -1,19 +1,15 @@
 <h2 align="left">Hi 👋! My name is Hassan Mohamed</h2>
 
-###
-
 <h3 align="left">I'm an Embedded Systems developer from Egypt. I love working with electronics, building PCBs. Also, I work with app and web development.</h3>
 
-###
-
-<img align="right" height="300" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXBrejRnZDY3d2Zhc3MxYmx3OHB5ODhqdHllMzNwcWFocHh2dHpyNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3tjwtj91ACw3LcXXuw/giphy.gif"  />
-
-###
+<img align="right" height="300" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXBrejRnZDY3d2Zhc3MxYmx3OHB5ODhqdHllMzNwcWFocHh2dHpyNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3tjwtj91ACw3LcXXuw/giphy.gif" />
 
 <div align="left">
-  <img src="https://streak-stats.demolab.com?user=Hasona57&locale=en&mode=daily&theme=react&hide_border=true&border_radius=5" height="150" alt="streak graph" /> <br>
-  <img src="https://github-readme-stats.vercel.app/api?username=Hasona57&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=react&locale=en&hide_border=true" height="100" alt="stats graph" /> <br>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hasona57&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=react&hide_border=false" height="150" alt="languages graph"  />
+  <img src="https://github-readme-stats.vercel.app/api?username=Hasona57&show_icons=true&include_all_commits=true&count_private=true&theme=react&hide_border=true&cache_seconds=1800" height="150" alt="stats graph" />
+  <br>
+  <img src="https://streak-stats.demolab.com?user=Hasona57&theme=react&hide_border=true&cache_seconds=1800" height="150" alt="streak graph" />
+  <br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hasona57&layout=compact&langs_count=5&theme=react&hide_border=true&cache_seconds=1800" height="150" alt="languages graph" />
 </div>
 
 ###
