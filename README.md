@@ -1,8 +1,14 @@
 <h2 align="left">Hi 👋! My name is Hassan Mohamed</h2>
 
+###
+
 <h3 align="left">I'm an Embedded Systems developer from Egypt. I love working with electronics, building PCBs. Also, I work with app and web development.</h3>
 
-<img align="right" height="300" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXBrejRnZDY3d2Zhc3MxYmx3OHB5ODhqdHllMzNwcWFocHh2dHpyNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3tjwtj91ACw3LcXXuw/giphy.gif" />
+###
+
+<img align="right" height="300" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXBrejRnZDY3d2Zhc3MxYmx3OHB5ODhqdHllMzNwcWFocHh2dHpyNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3tjwtj91ACw3LcXXuw/giphy.gif"  />
+
+###
 
 <div align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=Hasona57&show_icons=true&include_all_commits=true&count_private=true&theme=react&hide_border=true&cache_seconds=1800" height="150" alt="stats graph" />
