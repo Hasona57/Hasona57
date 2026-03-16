@@ -129,10 +129,3 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Hasona57/Hasona57/output/snake.svg" alt="Snake animation" />
 </p>
-
-improve this github profile readme more and add • dynamic coding activity section connected  to my hackatime https://hackatime.hackclub.com/
-so what to do and how to connect it
-
-here is the api
-
-api_key = d0bb2723-ce46-4801-ad7b-1fbb2224728b
