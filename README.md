@@ -7,7 +7,7 @@
 ###
 
 <img align="right" height="200" src="./assets/Ayanokouji Kiyotaka.gif" />
-<br>
+<br clear="right">
 <img align="right" height="200" src="./assets/Focus.gif" />
 
 ###
@@ -23,7 +23,7 @@
 ###
 
 <img align="right" height="200" src="./assets/Dance.gif"  />
-<br>
+<br clear="right">
 <img align="right" height="200" src="./assets/Music.gif" />
 
 ###
