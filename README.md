@@ -59,9 +59,7 @@
 ### Coding Activity
 
 <p align="center">
-  <a href="https://hackati.me/Hasona57">
-    <img src="https://github-readme-stats.vercel.app/api/wakatime?username=Hasona57&api_domain=waka.hackclub.com&theme=tokyonight&hide_border=true&border_radius=18&layout=compact&custom_title=Hackatime%20Coding%20Activity" height="220"/>
-  </a>
+  <img src="./github-metrics.svg" alt="GitHub Metrics" />
 </p>
 
 ---
